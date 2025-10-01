@@ -123,7 +123,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="emulator_function.c" />
+    <ClCompile Include="instruction.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="modrm.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="emulator.h" />
+    <ClInclude Include="emulator_function.h" />
+    <ClInclude Include="instruction.h" />
+    <ClInclude Include="modrm.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
