@@ -3,7 +3,6 @@
 
 #include "emulator.h"
 
-/* 命令セットの初期化関数 */
 void init_instructions(void);
 
 typedef void instruction_func_t(Emulator*);

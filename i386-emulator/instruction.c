@@ -9,8 +9,6 @@
 
 #include "modrm.h"
 
-/* x86命令の配列、opecode番目の関数がx86の
-   opcodeに対応した命令となっている */
 instruction_func_t* instructions[256];
 
 static void mov_r32_imm32(Emulator* emu)
