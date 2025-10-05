@@ -6,6 +6,7 @@
 enum Register { EAX, ECX, EDX, EBX, ESP, EBP, ESI, EDI, REGISTERS_COUNT };
 
 typedef struct {
+
     uint32_t registers[REGISTERS_COUNT];
 
     uint32_t eflags;
