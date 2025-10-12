@@ -5,10 +5,8 @@
 
 #include "emulator.h"
 
-
 typedef struct {
     uint8_t mod;
-
 
     union {
         uint8_t opecode;
@@ -34,7 +32,6 @@ uint32_t get_rm32(Emulator* emu, ModRM* modrm);
 void set_rm32(Emulator* emu, ModRM* modrm, uint32_t value);
 
 uint32_t get_r32(Emulator* emu, ModRM* modrm);
-
 
 void set_r32(Emulator* emu, ModRM* modrm, uint32_t value);
 

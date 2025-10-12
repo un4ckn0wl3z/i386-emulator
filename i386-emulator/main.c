@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+#include "disable_security.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,11 +9,12 @@
 #include "emulator_function.h"
 #include "instruction.h"
 
-
+/* 1MB */
 #define MEMORY_SIZE (1024 * 1024)
 
-char* registers_name[] = { "EAX", "ECX", "EDX", "EBX", "ESP", "EBP", "ESI", "EDI" };
+#define PROGRAM_NAME "i386-emulator"
 
+char* registers_name[] = { "EAX", "ECX", "EDX", "EBX", "ESP", "EBP", "ESI", "EDI" };
 
 static void read_binary(Emulator* emu, const char* filename)
 {
@@ -22,7 +23,7 @@ static void read_binary(Emulator* emu, const char* filename)
     binary = fopen(filename, "rb");
 
     if (binary == NULL) {
-        printf("%s cannot open file\n", filename);
+        printf("error: %s\n", filename);
         exit(1);
     }
 
@@ -41,10 +42,8 @@ static void dump_registers(Emulator* emu)
     printf("EIP = %08x\n", emu->eip);
 }
 
-
 static Emulator* create_emu(size_t size, uint32_t eip, uint32_t esp)
 {
-
     Emulator* emu = malloc(sizeof(Emulator));
 
     emu->memory = malloc(size);
@@ -69,9 +68,10 @@ int main(int argc, char* argv[])
     Emulator* emu;
 
     if (argc != 2) {
-        printf("usage: i386-emulator filename\n");
+        printf("usage: %s filename\n", PROGRAM_NAME);
         return 1;
     }
+
     init_instructions();
 
     emu = create_emu(MEMORY_SIZE, 0x7c00, 0x7c00);
@@ -86,6 +86,7 @@ int main(int argc, char* argv[])
             printf("\n\nNot Implemented: %x\n", code);
             break;
         }
+
         instructions[code](emu);
 
         if (emu->eip == 0) {

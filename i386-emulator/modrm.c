@@ -13,7 +13,7 @@ void parse_modrm(Emulator* emu, ModRM* modrm)
 
     assert(emu != NULL && modrm != NULL);
 
-    memset(modrm, 0, sizeof(ModRM)); 
+    memset(modrm, 0, sizeof(ModRM)); // set all bytes to 0
 
     code = get_code8(emu, 0);
     modrm->mod = ((code & 0xC0) >> 6);

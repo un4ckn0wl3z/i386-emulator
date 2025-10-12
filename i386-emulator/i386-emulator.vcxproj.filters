@@ -41,5 +41,8 @@
     <ClInclude Include="emulator_function.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="disable_security.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
