@@ -1,4 +1,4 @@
-#include "disable_security.h"
+#include "common.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,10 +9,6 @@
 #include "emulator_function.h"
 #include "instruction.h"
 
-/* 1MB */
-#define MEMORY_SIZE (1024 * 1024)
-
-#define PROGRAM_NAME "i386-emulator"
 
 char* registers_name[] = { "EAX", "ECX", "EDX", "EBX", "ESP", "EBP", "ESI", "EDI" };
 
