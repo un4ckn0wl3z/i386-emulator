@@ -1,5 +1,5 @@
 # i386-emulator
-An experimental i386 CPU Real Mode Emulator
+An experimental i386 CPU emulator designed to explore how a processor fetches, decodes, and executes instructions in real mode.
 
 <b>PS:</b> This emulator is for educational and research purposes only. <br>
 It is not intended for use in a real operating environment or to execute real binaries.
