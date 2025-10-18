@@ -1,2 +1,14 @@
-# i386-emulator (WIP)
+# i386-emulator
 An experimental i386 CPU Real Mode Emulator
+
+## Key features:
+
+- Implements real mode instruction set behavior (16-bit environment)
+- Supports register operations, memory addressing, and flag updates
+- Provides detailed instruction execution flow and cycle-accurate emulation logic
+- Omits I/O and peripheral device emulation to maintain clarity and focus on CPU internals
+
+## Ideal for:
+- Learning how x86 instructions are decoded and executed
+- Exploring CPU design and low-level system behavior
+- Building a foundation for a full protected-mode or hardware emulator
